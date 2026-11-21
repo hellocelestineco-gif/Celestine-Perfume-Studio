@@ -12,19 +12,21 @@ export {supabaseConfigured};
 export async function loadData(){
  const d=await db(),local=normalizeData(await d.get('app','data')||initial);
  if(!supabase)return local;
- const auth=await withTimeout(supabase.auth.getUser(),5000);
+ let auth;
+ try{auth=await withTimeout(supabase.auth.getUser(),5000)}catch(error){console.warn('Supabase auth unavailable; using local workspace.',error);return local}
  if(auth?.timeout)return local;
  const {data:{user}}=auth;
  if(!user)return local;
- const remote=await withTimeout(supabase.from('shared_workspace').select('data').eq('workspace_id','celestine').maybeSingle(),5000);
+ let remote;
+ try{remote=await withTimeout(supabase.from('shared_workspace').select('data').eq('workspace_id','celestine').maybeSingle(),5000)}catch(error){console.warn('Supabase workspace unavailable; using local workspace.',error);return local}
  if(remote?.timeout)return local;
  const {data:row,error}=remote;
- if(error)throw new Error(`Supabase load failed: ${error.message}`);
+ if(error){console.warn('Supabase workspace load failed; using local workspace.',error);return local}
  if(row?.data){const cloud=normalizeData(row.data);await d.put('app',cloud,'data');return cloud}
  const {error:seedError}=await supabase.from('shared_workspace').insert({workspace_id:'celestine',data:local});
  if(seedError){
   const {data:shared,error:retryError}=await supabase.from('shared_workspace').select('data').eq('workspace_id','celestine').maybeSingle();
-  if(retryError||!shared?.data)throw new Error(`Supabase setup failed: ${seedError.message}`);
+  if(retryError||!shared?.data){console.warn('Supabase workspace setup failed; using local workspace.',seedError,retryError);return local}
   const cloud=normalizeData(shared.data);await d.put('app',cloud,'data');return cloud;
  }
  return local;
