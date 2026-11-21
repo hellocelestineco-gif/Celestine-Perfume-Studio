@@ -1561,6 +1561,7 @@ button.banner-chip:focus-visible{outline:2px solid #fff;outline-offset:2px}
 /* Access actions: one compact menu keeps member rows calm and predictable. */
 .access-badge.blocked{background:#eeeef5;color:#55566f}
 .access-actions{align-items:center}
+.access-row>.access-actions{display:flex;flex-direction:row;align-items:center;justify-content:flex-end;gap:.55rem}
 .access-menu{position:relative}
 .access-menu-trigger{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--t-line);border-radius:11px;background:var(--t-card);color:var(--t-ink2)}
 .access-menu-trigger:hover,.access-menu-trigger[aria-expanded=true]{background:var(--t-tint);border-color:var(--t-line2);color:var(--t-brand)}
