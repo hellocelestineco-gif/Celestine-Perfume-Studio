@@ -40,6 +40,7 @@ with check (lower(coalesce(auth.jwt() ->> 'email', '')) in ('bonie.office@gmail.
 
 grant usage on schema public to authenticated;
 grant select on public.profiles to authenticated;
+grant update on public.profiles to authenticated;
 
 create table if not exists public.app_state (
   user_id uuid primary key references auth.users(id) on delete cascade,
