@@ -1576,3 +1576,13 @@ button.banner-chip:focus-visible{outline:2px solid #fff;outline-offset:2px}
   #root .sidebar nav button:nth-child(6) span:before{content:'Materials'}
   #root .sidebar nav button:nth-child(5) span:after,#root .sidebar nav button:nth-child(6) span:after{font-size:.67rem}
 }
+
+/* iOS mobile viewport guard: prevent Safari text zoom, horizontal cropping, and header blur. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(max-width:1023px){
+  html,body,#root{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
+  body{overscroll-behavior-x:none}
+  #root .topbar{background:var(--t-card)!important;background-image:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  #root main{width:100%;max-width:100%;min-width:0}
+  #root :is(input,select,textarea){font-size:16px!important}
+}
