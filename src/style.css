@@ -64,6 +64,35 @@ main .costing-tabs{padding:.22rem}main .costing-tabs button{min-height:31px;padd
 @media(min-width:1280px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px}}
 @media(min-width:1536px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
+/* Sidebar polish: give the workspace navigation room to breathe and make long labels readable. */
+@media(min-width:1024px){
+  #root .sidebar{width:304px;background:linear-gradient(180deg,#fffdfc 0%,#f7f7fb 58%,#f1f8f5 100%);border-right-color:#e4e9ee;box-shadow:12px 0 34px #23367012}
+  #root .sidebar.collapsed{width:78px}
+  #root .sidebar .brand{padding:25px 22px 24px;gap:12px}
+  #root .sidebar .brand-mark{width:44px;height:44px;border-radius:14px;box-shadow:0 8px 18px #063b2c2b}
+  #root .sidebar nav{gap:4px;padding:0 16px 8px;scrollbar-width:thin}
+  #root .sidebar nav button{min-height:52px;padding:7px 14px;gap:12px;border:1px solid transparent;border-radius:15px}
+  #root .sidebar nav button span{white-space:normal;overflow:visible;text-overflow:clip}
+  #root .sidebar nav button svg{width:21px;height:21px;padding:4px;box-sizing:content-box;border-radius:9px;background:#edf5f1;color:var(--t-brand)}
+  #root .sidebar nav button:not(.active):hover{background:#fff;border-color:#e6ece9;box-shadow:0 7px 18px #23367010;transform:translateX(3px)}
+  #root .sidebar nav button:not(.active):hover svg{background:#e2f2eb}
+  #root .sidebar nav button.active{background:linear-gradient(100deg,#e4f4ed,#f4faf7);border-color:#cfe8dc;box-shadow:inset 3px 0 0 var(--t-brand),0 7px 18px #23367012}
+  #root .sidebar nav button.active svg{background:var(--t-brand);color:#fff;filter:none}
+  #root .sidebar nav button.active:after{right:9px;width:5px;height:28px}
+  #root .sidebar nav button span{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+  #root .sidebar nav button span:after{content:'Navigate';font-size:.67rem;font-weight:550;line-height:1.1;color:var(--t-muted);opacity:.85}
+  #root .sidebar nav button.active span:after{content:'Current page';color:var(--t-brand);opacity:.8}
+  #root .sidebar nav button:nth-child(5){margin-top:18px}
+  #root .sidebar nav button:nth-child(5):before{top:-17px}
+  #root .sidebar .collapse{width:calc(100% - 32px);margin:16px 16px 0;min-height:48px;border-radius:14px;background:#fff;border-color:#d8e6df;box-shadow:0 5px 14px #23367010}
+  #root .sidebar.collapsed .brand{padding-inline:15px}
+  #root .sidebar.collapsed nav{padding-inline:12px}
+  #root .sidebar.collapsed nav button{justify-content:center;padding-inline:0}
+  #root .sidebar.collapsed nav button span{display:none}
+  #root .sidebar.collapsed nav button.active:after{right:4px;width:3px;height:22px}
+  #root .sidebar.collapsed .collapse{width:calc(100% - 24px);margin-inline:12px}
+}
+
 /* Desktop sidebar refinement: keep navigation readable without introducing page overflow. */
 @media(min-width:1024px){
   #root .sidebar{width:264px;overflow:hidden;isolation:isolate}

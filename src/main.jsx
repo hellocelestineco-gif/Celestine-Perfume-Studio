@@ -41,6 +41,9 @@ const localAuthBypass=import.meta.env.DEV&&import.meta.env.VITE_BYPASS_AUTH==='t
 const readSelectedFormula=()=>{try{return localStorage.getItem(selectedFormulaKey)||null}catch{return null}};
 const pages=[['Dashboard',LayoutDashboard],['Formula Library',FlaskConical],['Production',Boxes],['Costing',Calculator],['Inventory of Raw Materials',Package,'Liquid and non-liquid stock: materials, bottles, stickers, and supplies'],['Raw Material Registration',BookOpen,'Materials, suppliers, quantities, and purchase costs'],['Settings',Settings,'Account access, data, and backups']];
 const primary=pages.slice(0,4);
+const sidebarGroups=[{label:'STUDIO',items:pages.slice(0,4)},{label:'INVENTORY',items:pages.slice(4,6)},{label:'ACCOUNT',items:pages.slice(6)}];
+const sidebarLabels={'Inventory of Raw Materials':'Inventory','Raw Material Registration':'Materials'};
+const sidebarHints={Dashboard:'Overview','Formula Library':'Scents and versions',Production:'Batches and aging',Costing:'Costs and pricing','Inventory of Raw Materials':'Stock on hand','Raw Material Registration':'Suppliers and inputs',Settings:'Account and backups'};
 const Button=({children,variant='secondary',...props})=><button className={`btn ${variant}`} {...props}>{children}</button>;
 const DashboardMetric=({label,value,detail,icon:Icon,tone})=><div className={`dashboard-metric ${tone}`}><span className="dashboard-metric-icon"><Icon size={17}/></span><div><span>{label}</span><strong>{value}</strong><small>{detail||({Formulas:'Approved library',Production:'Active batches',Bottles:'Saleable units','Cost of production':'Active batch total','Cost per bottle':'Average finished unit','Projected profit':'At saved retail prices'}[label]||'Live workspace data')}</small></div></div>;
 const Empty=({text})=><p className="empty">{text}</p>;
