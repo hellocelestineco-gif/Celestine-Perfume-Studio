@@ -1,0 +1,337 @@
+/* Shared glass surfaces adapt to every palette in themes.css. */
+html body #root .bc-actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:12px}
+html body #root .bc-actions .btn{min-height:48px;padding:12px 18px;font-size:14px;font-weight:750;gap:8px;border-radius:13px;justify-content:center}
+html body #root .bc-actions .btn svg{width:19px;height:19px;flex-shrink:0}
+@media(max-width:520px){html body #root .bc-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}html body #root .bc-actions .btn{width:100%;min-width:0;padding:12px 10px}}
+/* Measurement sheets: names and quantities lead the visual hierarchy. */
+html body #root .formula-summary-heading h4{font-size:17px;font-weight:800;line-height:1.35}
+html body #root .formula-summary-ingredients{grid-template-columns:1fr;gap:10px}
+html body #root .formula-summary-ingredient{padding:16px;border-radius:14px}
+html body #root .formula-summary-row-top{gap:16px;align-items:center}
+html body #root .formula-summary-row-top strong{font-size:15px;font-weight:800;line-height:1.4;overflow-wrap:anywhere}
+html body #root .formula-summary-row-top span{font-size:18px;font-weight:850;padding:7px 12px;border-radius:10px;min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+html body #root .formula-summary-track{height:4px;margin:12px 0 0;opacity:.75}
+html body #root .formula-summary-quantity strong{font-size:24px;line-height:1.3}
+html body #root .bf-usage-row{padding:14px;border:1px solid var(--t-line2);border-radius:12px;background:var(--t-card);gap:10px}
+html body #root .bf-usage-name strong{font-size:15px;line-height:1.4;color:var(--t-ink);white-space:normal;overflow-wrap:anywhere}
+html body #root .bf-usage-name small,html body #root .bf-usage-planned{font-size:12px;color:var(--t-ink3);line-height:1.4}
+html body #root .bf-usage-amount input{font-size:22px;font-weight:850;min-height:48px;font-variant-numeric:tabular-nums;color:var(--t-ink);background:var(--t-soft)!important}
+html body #root .bf-usage-amount>span{font-size:14px;font-weight:800;color:var(--t-ink2)}
+html body #root .bf-usage-edit{min-width:44px;min-height:44px}
+/* Button groups have no enclosing panel; buttons retain their own surfaces. */
+html body #root :is(.bf-actions,.bd-actions,.access-actions,.backup-actions,.stock-entry-actions,.stock-row-actions,.material-dialog-actions,.formula-result-actions,.formula-view-actions,.saved-formula-actions,.bc-actions,.pricing-toolbar,.step-nav){background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html body #root :is(.bf-actions,.bd-actions,.access-actions,.backup-actions,.stock-entry-actions,.stock-row-actions,.material-dialog-actions,.formula-result-actions,.formula-view-actions,.saved-formula-actions,.bc-actions,.pricing-toolbar,.step-nav)::before,
+html body #root :is(.bf-actions,.bd-actions,.access-actions,.backup-actions,.stock-entry-actions,.stock-row-actions,.material-dialog-actions,.formula-result-actions,.formula-view-actions,.saved-formula-actions,.bc-actions,.pricing-toolbar,.step-nav)::after{display:none!important}
+html body #root .formula-window .formula-view-actions{background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#root .account-lock{display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+@media(max-width:520px){#root .account-lock span{display:none}#root .account-lock{min-width:40px;padding:8px}}
+html body #root .pricing-history-card{cursor:pointer;overflow:visible}
+html body #root .pricing-history-card .saved-price-summary{display:block!important;grid-column:1/-1;min-width:0;max-width:100%;overflow:visible}
+#root .saved-price-open{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:4px 0;border:0;background:none;color:var(--t-ink2);font:inherit;font-weight:800;text-align:left;cursor:pointer}
+#root .saved-price-open small{font-size:10px;font-weight:600;text-decoration:underline}
+#root .saved-price-summary{grid-column:1/-1;width:100%;padding:14px;border:1px solid var(--t-line2);border-radius:12px;background:var(--t-card);color:var(--t-ink)}
+#root .saved-price-summary h3{margin:0 0 8px;font-size:15px}
+#root .saved-price-summary>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px 0;border-top:1px solid var(--t-line)}
+#root .saved-price-summary>div>strong{grid-column:1/-1}
+#root .saved-price-summary span{display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--t-ink3)}
+html body #root .batch-form .bf-actions{position:relative!important;bottom:auto!important;z-index:auto;margin-top:16px;padding:12px 0;clear:both}
+/* Separate the primary and destructive formula actions. */
+html body #root .formula-window .formula-view-actions{width:100%;justify-content:space-between;gap:24px;justify-self:stretch;box-sizing:border-box}
+html body #root .formula-window .formula-view-actions .btn{flex:0 0 auto!important}
+@media(max-width:380px){html body #root .formula-window .formula-view-actions{gap:16px}}
+html body #root .formula-view-actions{position:sticky;bottom:12px!important;z-index:15;justify-content:center;align-items:center;justify-self:center;width:fit-content;max-width:100%;gap:10px;padding:8px;background:var(--t-card);border:1px solid var(--t-line2);border-radius:18px;box-shadow:0 8px 26px #17233d26,inset 0 1px #ffffff40;margin:12px auto calc(8px + env(safe-area-inset-bottom))}
+html body #root .formula-view-actions .btn{flex:0 0 auto!important;min-width:0;min-height:44px;width:auto;padding:10px 18px;border-radius:14px;font-size:12px;font-weight:750;gap:8px}
+html body #root .formula-view-actions .btn.primary{background:var(--t-btn);color:var(--t-btn-ink);border:1px solid color-mix(in srgb,var(--t-brand) 65%,white);box-shadow:0 4px 10px color-mix(in srgb,var(--t-brand) 20%,transparent),inset 0 1px #ffffff40}
+html body #root .formula-view-actions .danger-action{background:var(--ui-danger-bg);color:var(--ui-danger-ink);border-color:color-mix(in srgb,var(--ui-danger-ink) 12%,transparent);box-shadow:none}
+html body #root .formula-view-actions .danger-action:hover{background:var(--ui-danger-bg);color:var(--ui-danger-ink)}
+@media(max-width:380px){html body #root .formula-view-actions{gap:6px;justify-content:space-between}html body #root .formula-view-actions .btn{padding:9px 11px;font-size:11px}}
+@media(max-width:1023px){
+ html.keyboard-open #root .bottom-nav{display:none!important}
+ html:has(.formula-window-backdrop,.material-dialog-backdrop,.sheet-backdrop) #root .bottom-nav{display:none!important}
+ html body #root :is(.formula-window-backdrop,.material-dialog-backdrop){z-index:100;top:var(--visible-top,0px);bottom:auto;height:var(--visible-height,100dvh);backdrop-filter:none;-webkit-backdrop-filter:none}
+ html body #root :is(.formula-window,.material-dialog){max-height:100%;min-height:0}
+ html body #root :is(.formula-window-header,.material-dialog-header){flex-shrink:0}
+ html body #root :is(.formula-window-body,.material-dialog-form){min-height:0;overscroll-behavior:contain;scroll-padding-block:24px 110px;padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+ html body #root :is(.bf-actions,.formula-view-actions,.formula-result-actions,.material-dialog-actions){display:flex;flex-wrap:wrap;gap:8px;position:sticky;bottom:calc(76px + env(safe-area-inset-bottom));z-index:10;background:var(--t-card);border-top:1px solid var(--t-line);padding:10px 0;isolation:isolate}
+ html body #root :is(.formula-window,.material-dialog) :is(.formula-view-actions,.formula-result-actions,.material-dialog-actions){bottom:0}
+ html.keyboard-open #root :is(.bf-actions,.formula-view-actions,.formula-result-actions,.material-dialog-actions){bottom:0}
+ html body #root :is(.bf-actions,.formula-view-actions,.formula-result-actions,.material-dialog-actions) .btn{min-height:44px;flex-grow:1}
+ html body #root :is(input,select,textarea){scroll-margin-top:100px;scroll-margin-bottom:120px}
+ html.keyboard-open #root #main{padding-bottom:32px!important}
+}
+html body #root .material-dialog-backdrop{z-index:100;backdrop-filter:none;-webkit-backdrop-filter:none}
+@media(max-width:767px){
+ html body #root .material-dialog-backdrop{top:var(--visible-top,0px);bottom:auto;height:var(--visible-height,100dvh)}
+ html body #root .material-dialog{height:100%;max-height:100%;border-radius:0}
+ html body #root .material-dialog-header{flex-shrink:0}
+ html body #root .material-dialog-form{flex:1;min-height:0;scroll-padding-bottom:100px}
+ html body #root .material-dialog-actions{position:sticky;bottom:-1.1rem;z-index:5;background:var(--t-card);border-top:1px solid var(--t-line);padding:.75rem 0 calc(.75rem + env(safe-area-inset-bottom));margin-top:.75rem}
+ html body #root .material-dialog-actions .btn{min-height:44px}
+ html.keyboard-open #root .bottom-nav,html:has(.material-dialog-backdrop) #root .bottom-nav{display:none!important}
+}
+/* Raw material records and entry forms prioritize opaque, readable surfaces. */
+html body #root :is(.raw-library,.raw-library .material-group,.raw-library .material-record,.material-dialog,.material-dialog-header,.material-dialog-form){background:var(--t-card)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;color:var(--t-ink);isolation:isolate}
+html body #root :is(.raw-library,.material-dialog)::before,html body #root :is(.raw-library,.material-dialog)::after{display:none!important}
+html body #root :is(.raw-library,.material-dialog) :is(input,select,textarea){background:var(--t-soft)!important;color:var(--t-ink)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-color:var(--t-line2)}
+html body #root .raw-library .material-record{border-color:var(--t-line);box-shadow:none}
+html body #root :is(.raw-library,.material-dialog) :is(.material-record-name strong,.material-form-heading){color:var(--t-ink)!important}
+@media(max-width:1023px){
+ html body #root{--mobile-nav-space:calc(76px + env(safe-area-inset-bottom,0px))}
+ html body #root #main{padding-bottom:calc(var(--mobile-nav-space) + 28px)!important}
+ html{scroll-padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+ html body #root .bottom-nav{box-sizing:border-box;min-height:var(--mobile-nav-space);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));align-items:center}
+ html body #root .bottom-nav button{min-width:0;min-height:48px;padding:5px 3px;gap:3px;font-size:10px;line-height:1.2}
+ html body #root .bottom-nav button span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ html body #root :is(.bf-actions,.formula-view-actions,.step-nav){scroll-margin-bottom:calc(var(--mobile-nav-space) + 20px)}
+ html body #root :is(input,select,textarea,button){scroll-margin-bottom:calc(var(--mobile-nav-space) + 16px)}
+ html body #root .toast{bottom:calc(var(--mobile-nav-space) + 12px)}
+}
+/* Semantic surfaces keep theme accents distinct from readable data surfaces. */
+:root{--ui-success-bg:#e5f5ed;--ui-success-ink:#176344;--ui-warning-bg:#fff0d2;--ui-warning-ink:#80500d;--ui-danger-bg:#ffe9eb;--ui-danger-ink:#a42e43}
+html[data-appearance="dark"]{--ui-success-bg:#183e35;--ui-success-ink:#9ee5c6;--ui-warning-bg:#473720;--ui-warning-ink:#ffdc99;--ui-danger-bg:#482735;--ui-danger-ink:#ffb6c4}
+html body #root :is(.pricing-tier-editor,.pricing-tier-editor-group,.formula-summary-section,.material-record,.inventory-card,.saved-formula,.theme-card){background:var(--t-card);color:var(--t-ink);border-color:var(--t-line)}
+html body #root :is(.pricing-tier-editor-group h4,.formula-summary-heading h4,.material-record-name strong,.saved-formula-name strong){color:var(--t-ink)}
+html body #root :is(.sidebar nav button.active,.bottom-nav button.active,.status-chips button.active,.formula-basis button.active){background:var(--t-tint);color:var(--t-ink);border-color:var(--t-line2)}
+html body #root :is(input,select,textarea){color:var(--t-ink);border-color:var(--t-line2)}
+html body #root input::placeholder,html body #root textarea::placeholder{color:var(--t-muted);opacity:1}
+html body #root :is(.access-badge.master,.access-badge.approved,.user-settings-notice,.backup-message,.structure-note){background:var(--ui-success-bg);color:var(--ui-success-ink)!important}
+html body #root :is(.access-badge.pending,.tier-warn,.pricing-warnings p){background:var(--ui-warning-bg);color:var(--ui-warning-ink)!important}
+html body #root :is(.access-badge.rejected,.material-error,.formula-error){background:var(--ui-danger-bg);color:var(--ui-danger-ink)!important}
+html body #root .formula-summary-highlights>div:first-child{background:var(--ui-success-bg);border-color:var(--t-line)}
+html body #root .formula-summary-highlights>div:first-child :is(span,strong,small){color:var(--ui-success-ink)}
+html body #root .formula-summary-highlights>div+div{background:var(--ui-warning-bg);border-color:var(--t-line)}
+html body #root .formula-summary-highlights>div+div :is(span,strong,small){color:var(--ui-warning-ink)}
+#root .access-list{gap:8px}
+#root .access-row{padding:10px 12px;min-height:64px;gap:10px;border-radius:13px}
+#root .access-row .access-identity{display:flex;flex-direction:row;align-items:center;gap:10px;min-width:0}
+#root .access-identity>span:last-child{display:flex;flex-direction:column;gap:3px;min-width:0}
+#root .access-avatar{width:30px;height:30px;flex:0 0 30px;border-radius:10px;margin:0;font-size:12px}
+#root .access-identity strong{font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+#root .access-identity small{font-size:10px;line-height:1.3}
+#root .access-row .access-actions{gap:5px;align-items:flex-end;flex-shrink:0}
+#root .access-row .btn{min-height:34px;padding:6px 9px;font-size:11px}
+#root .access-badge{padding:5px 9px;font-size:10px}
+#root .access-summary{gap:7px;margin-bottom:10px}
+#root .access-summary>div{padding:9px 11px;min-height:50px}
+#root .access-summary strong{font-size:16px}
+@media(max-width:380px){#root .access-row{flex-wrap:wrap}#root .access-row .access-actions{margin-left:auto}}
+/* Avoid repeatedly compositing layered glass while scrolling on phones. */
+@media(max-width:900px),(hover:none) and (pointer:coarse){
+ html body #root :is(.card,.cost-card,.stat,.dashboard-metric,.production-record,.formula-window,.material-dialog,.sheet,.costing-current,.costing-steps,.bf-steps,.bf-group,.pricing-tier,.pricing-tier-editor-group,.topbar,.sidebar,.bottom-nav,input,select,textarea,.theme-row,.theme-toggle){
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  background:linear-gradient(145deg,#ffffff20,transparent 65%),color-mix(in srgb,var(--t-card) 94%,transparent)!important;
+  box-shadow:0 3px 10px #17233d0c,inset 0 1px #ffffff55!important;
+ }
+ html body::before,html body::after,html #root .shell::before,html #root .shell::after,
+ html #root .card::before,html #root .card::after,html #root .sheet::before,html #root .sheet::after{display:none!important}
+ html #root *,html #root *::before,html #root *::after{animation:none!important;transition:none!important}
+ html body{background-attachment:scroll!important}
+ html #root .dashboard-metric:hover{transform:none!important}
+}
+:root{
+  --glass-panel:color-mix(in srgb,var(--t-card) 54%,transparent);
+  --glass-raised:color-mix(in srgb,var(--t-card) 68%,transparent);
+  --glass-soft:color-mix(in srgb,var(--t-soft) 48%,transparent);
+  --glass-input:color-mix(in srgb,var(--t-card) 90%,transparent);
+  --glass-line:color-mix(in srgb,var(--t-line2) 38%,white 62%);
+  --glass-edge:#ffffffb8;
+  --glass-sheen:linear-gradient(145deg,#ffffff6b 0%,#ffffff17 38%,transparent 70%);
+  --glass-shadow:0 18px 46px #25265624,0 4px 12px #25265612,inset 0 1px #ffffffca,inset 0 -1px #ffffff5c;
+  --glass-ambient:#84dbc0;
+}
+html:is([data-theme="steel"],[data-theme="dusk"],[data-theme="aurora"],[data-theme="plum"],[data-theme="violet"],[data-theme="night"]){
+  --glass-panel:color-mix(in srgb,var(--t-card) 68%,transparent);
+  --glass-raised:color-mix(in srgb,var(--t-card) 76%,transparent);
+  --glass-soft:color-mix(in srgb,var(--t-soft) 62%,transparent);
+  --glass-input:color-mix(in srgb,var(--t-card) 93%,transparent);
+  --glass-line:color-mix(in srgb,var(--t-line2) 84%,transparent);
+  --glass-edge:#ffffff36;
+  --glass-sheen:linear-gradient(145deg,#ffffff2b 0%,#ffffff0a 38%,transparent 70%);
+  --glass-shadow:0 20px 48px #02061555,0 3px 12px #02061530,inset 0 1px #ffffff38,inset 0 -1px #ffffff12;
+  --glass-ambient:var(--t-brand2);
+}
+
+body{background:radial-gradient(circle at 4% 8%,color-mix(in srgb,var(--t-brand) 38%,transparent),transparent 30rem),radial-gradient(circle at 96% 24%,color-mix(in srgb,var(--t-brand2) 38%,transparent),transparent 32rem),radial-gradient(circle at 50% 88%,color-mix(in srgb,var(--glass-ambient) 33%,transparent),transparent 36rem),var(--t-page) fixed!important}
+#root .shell,#root .workspace{background:transparent!important}
+
+/* Main panes */
+#root .card,#root .cost-card,#root .kpis .stat,#root .dashboard-metric,
+#root .production-record,#root .formula-window,#root .material-dialog,
+#root .sheet{
+  background:var(--glass-sheen),var(--glass-panel);
+  border:1px solid var(--glass-line);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+#root .card,#root .cost-card,#root .production-record{border-radius:22px}
+
+/* Smaller surfaces keep their color meaning while letting the page show through. */
+#root .costing-current,#root .costing-steps,#root .bf-steps,
+#root .bf-group,#root .pricing-tier,#root .pricing-tier-editor-group,
+#root .bc-key-facts>div,#root .formula-step,#root .formula-result,
+#root .costing-material-row,#root .costing-history-preview>button,
+#root .inventory-card,#root .material-card,#root .theme-card,
+#root .saved-formula,#root .pricing-history-card,#root .formula-summary-section,
+#root .profile-picture-editor{
+  background:var(--glass-soft);
+  border-color:var(--glass-line);
+  box-shadow:inset 0 1px var(--glass-edge),0 8px 20px #1d244b10;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+#root .pricing-tier[open],#root .pricing-tier-editor-group{background:var(--glass-raised)}
+#root .pricing-tier:first-of-type{background:color-mix(in srgb,var(--t-tint) 69%,transparent)}
+#root .formula-library-hero{background:linear-gradient(120deg,color-mix(in srgb,var(--t-tint) 60%,transparent),color-mix(in srgb,var(--t-soft) 55%,transparent))}
+
+/* Floating chrome */
+#root .topbar,#root .sidebar,#root .bottom-nav,#root .formula-window-header,
+#root .material-dialog-header{
+  background:var(--glass-sheen),var(--glass-raised);
+  border-color:var(--glass-line);
+  box-shadow:0 8px 26px #1d244b14,inset 0 1px var(--glass-edge);
+  backdrop-filter:blur(12px) saturate(125%);
+  -webkit-backdrop-filter:blur(12px) saturate(125%);
+}
+#root .bottom-nav{box-shadow:0 -8px 30px #1d244b1a,inset 0 1px var(--glass-edge)}
+#root .bottom-nav button.active,#root .sidebar nav button.active{
+  background:color-mix(in srgb,var(--t-tint) 75%,transparent);
+  box-shadow:inset 0 1px var(--glass-edge);
+}
+
+/* Controls use a calmer, more opaque glass so entered values remain readable. */
+#root input,#root select,#root textarea,#root .btn:not(.primary),
+#root .icon-button,#root .segments,#root .sheet-link{
+  background:var(--glass-input);
+  border-color:var(--glass-line);
+}
+#root input:focus-visible,#root select:focus-visible,#root textarea:focus-visible,
+#root button:focus-visible,#root summary:focus-visible{outline-color:var(--t-brand)}
+#root .btn:not(.primary):hover,#root .icon-button:hover{background:var(--glass-raised)}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  #root .card,#root .cost-card,#root .kpis .stat,#root .production-record,
+  #root .formula-window,#root .material-dialog,#root .sheet{background:var(--t-card-a)}
+}
+@media(prefers-reduced-transparency:reduce){
+  #root .card,#root .cost-card,#root .kpis .stat,#root .dashboard-metric,
+  #root .production-record,#root .formula-window,#root .material-dialog,
+  #root .sheet,#root .costing-current,#root .costing-steps,#root .bf-steps,
+  #root .bf-group,#root .pricing-tier,#root .pricing-tier-editor-group,
+  #root .topbar,#root .sidebar,#root .bottom-nav,#root input,#root select,#root textarea{
+    background:var(--t-card);backdrop-filter:none;-webkit-backdrop-filter:none;
+  }
+}
+@media(prefers-contrast:more){
+  #root .card,#root .cost-card,#root .production-record,#root .pricing-tier,
+  #root .topbar,#root .sidebar,#root .bottom-nav,#root input,#root select,#root textarea{
+    background:var(--t-card);border-color:var(--t-ink3);backdrop-filter:none;-webkit-backdrop-filter:none;
+  }
+}
+
+/* Final system-wide UI pass: calm hierarchy, tighter rhythm, and touch-safe controls. */
+#root{--ui-radius:18px;--ui-radius-sm:12px;--ui-gap:clamp(.7rem,1.4vw,1.1rem);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.01em}
+#root .shell{min-height:100dvh}
+#root .workspace{min-width:0}
+#root #main{width:min(100%,1220px);margin:0 auto;padding:clamp(1rem,2vw,1.5rem) clamp(.85rem,2.4vw,2rem) 5.5rem}
+#root .topbar{min-height:72px;padding:clamp(.8rem,1.7vw,1.1rem) clamp(1rem,2.5vw,2rem);position:sticky;top:0;z-index:20}
+#root .topbar h1{font-size:clamp(1.25rem,2.4vw,1.65rem);letter-spacing:-.035em}
+#root .eyebrow{font-size:.62rem;letter-spacing:.14em;font-weight:850}
+#root .bc-sep{display:flex;align-items:center;gap:.7rem;margin:1.35rem 0 .65rem;color:var(--t-muted);font-size:.64rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+#root .bc-sep:after{content:"";height:1px;flex:1;background:var(--glass-line)}
+#root .card{border-radius:var(--ui-radius);padding:clamp(.9rem,1.8vw,1.2rem)}
+#root .card-head{gap:.75rem;margin-bottom:.8rem}
+#root .card-head h2{font-size:clamp(.95rem,1.7vw,1.15rem);letter-spacing:-.025em}
+#root .muted,.muted{line-height:1.45}
+#root .btn{min-height:38px;border-radius:11px;padding:.55rem .85rem;font-size:.75rem;font-weight:800;letter-spacing:-.005em;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+#root .btn.primary{box-shadow:0 7px 16px color-mix(in srgb,var(--t-brand) 25%,transparent)}
+#root .btn:hover:not(:disabled){transform:translateY(-1px)}
+#root .btn:active:not(:disabled){transform:translateY(0) scale(.98)}
+#root .sidebar{width:238px;padding:1rem .75rem}
+#root .sidebar nav{gap:.3rem}
+#root .sidebar nav button{min-height:44px;border-radius:12px;padding:.65rem .75rem;font-size:.78rem;font-weight:750}
+#root .sidebar nav button.active{font-weight:850}
+#root .brand{padding:.4rem .5rem 1rem;margin-bottom:.4rem}
+#root .bottom-nav{padding:.5rem max(.55rem,env(safe-area-inset-left)) calc(.5rem + env(safe-area-inset-bottom));gap:.25rem}
+#root .bottom-nav button{min-height:48px;border-radius:13px;font-size:.62rem;font-weight:750}
+#root .dashboard-hero{border-radius:var(--ui-radius);padding:clamp(1rem,2vw,1.5rem)}
+#root .dashboard-metrics{gap:.7rem}
+#root .dashboard-metric{min-height:76px;border-radius:var(--ui-radius-sm);padding:.75rem}
+#root .dashboard-metric-icon{width:36px;height:36px;border-radius:11px}
+#root input,#root select,#root textarea{min-height:40px;border-radius:10px;font-size:.8rem}
+#root label.field{gap:.35rem;font-size:.7rem;font-weight:750}
+#root .toast{right:clamp(.75rem,2vw,1.5rem);bottom:calc(5.5rem + env(safe-area-inset-bottom));max-width:min(360px,calc(100vw - 1.5rem));border-radius:14px;padding:.75rem .9rem;box-shadow:0 14px 34px #1d244b24}
+@media(max-width:900px){
+  #root .sidebar{display:none}
+  #root .topbar{padding-inline:1rem}
+  #root #main{padding-inline:clamp(.7rem,3vw,1rem)}
+}
+@media(max-width:520px){
+  #root .topbar{min-height:64px}
+  #root .topbar .eyebrow{font-size:.55rem}
+  #root .topbar h1{font-size:1.15rem}
+  #root .topbar-account .profile-copy{display:none}
+  #root .card{border-radius:15px;padding:.85rem}
+  #root .dashboard-hero h2{font-size:1.18rem}
+  #root .dashboard-hero-actions{display:grid;grid-template-columns:1fr 1fr}
+  #root .dashboard-hero-actions .btn{width:100%;min-width:0}
+  #root .dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+  #root .dashboard-metric{min-height:68px;padding:.6rem;gap:.5rem}
+  #root .dashboard-metric-icon{width:30px;height:30px}
+  #root .dashboard-metric>div span{font-size:.6rem}
+  #root .dashboard-metric strong{font-size:.86rem}
+  #root .btn{min-height:40px}
+}
+@media(max-width:360px){
+  #root #main{padding-inline:.55rem}
+  #root .dashboard-hero-actions{grid-template-columns:1fr}
+  #root .dashboard-metrics{grid-template-columns:1fr}
+}
+
+
+/* Keep the enhanced visual language consistent when any theme is selected. */
+/* Formula summaries use the selected palette throughout, including dark themes. */
+html body #root .formula-summary-banner{background:linear-gradient(120deg,var(--t-soft),var(--t-tint))!important;color:var(--t-ink)!important;border-color:var(--t-line2)!important}
+html body #root .formula-summary-banner :is(.formula-summary-name,.formula-summary-total strong,.formula-summary-scent dd){color:var(--t-ink)!important;text-shadow:none!important}
+html body #root .formula-summary-banner :is(.eyebrow,.formula-summary-total small,.formula-summary-scent dt,.formula-summary-concentration small){color:var(--t-ink3)!important}
+html body #root .formula-summary-banner :is(.formula-summary-concentration,.formula-summary-identity>span,.summary-print-button){background:var(--t-card)!important;color:var(--t-ink)!important;border-color:var(--t-line2)!important}
+html body #root .formula-summary-section .formula-summary-ingredient{background:var(--t-soft)!important;border-color:var(--t-line)!important}
+html body #root .formula-summary-row-top strong{color:var(--t-ink)!important}
+html body #root .formula-summary-row-top span{background:var(--t-tint)!important;color:var(--t-ink)!important}
+html body #root .formula-summary-track{background:var(--t-line)!important}
+html body #root .formula-summary-track i{background:var(--t-brand)!important}
+#root .formula-summary-banner{background:linear-gradient(120deg,var(--t-soft),var(--t-tint));border-color:var(--t-line2);box-shadow:0 8px 24px #17233d18,inset 0 1px #ffffff30;color:var(--t-ink)}
+#root .formula-summary-banner .formula-summary-name{color:var(--t-ink);border-bottom-color:var(--t-brand);text-shadow:none}
+#root .formula-summary-banner .eyebrow,#root .formula-summary-banner .formula-summary-total small{color:var(--t-ink3)}
+#root .formula-summary-banner .formula-summary-total strong,#root .formula-summary-scent dd{color:var(--t-ink)}
+#root .formula-summary-scent dt{color:var(--t-ink3)}
+#root .formula-summary-identity>span,#root .formula-summary-banner .formula-summary-concentration{background:var(--t-card);color:var(--t-ink2);border-color:var(--t-line2)}
+#root .formula-summary-banner .formula-summary-concentration small{color:var(--t-ink3)}
+#root .formula-summary-banner button.summary-print-button.btn{background:var(--t-card);color:var(--t-ink2);border-color:var(--t-line2)}
+#root .formula-summary-section{background:var(--t-card);backdrop-filter:none;-webkit-backdrop-filter:none}
+#root .formula-summary-section .formula-summary-ingredient{background:var(--t-soft);border-color:var(--t-line)}
+#root .formula-summary-row-top strong{color:var(--t-ink)}
+#root .formula-summary-row-top span{background:var(--t-tint);color:var(--t-ink2)}
+#root .formula-summary-track{background:var(--t-line)}
+#root .formula-summary-track i,#root .formula-summary-track i.oil{background:var(--t-brand)}
+#root .formula-summary-date{color:var(--t-ink3)}
+#root .bc-filters .bc-search{height:42px;min-width:0;padding:0 12px;gap:9px;background:var(--glass-input);box-sizing:border-box;overflow:hidden}
+#root .bc-search>svg{flex:0 0 16px;color:var(--t-ink3)}
+#root .bc-search input{width:100%;height:100%;min-height:0;padding:0;border:0;border-radius:0;background:transparent!important;box-shadow:none;outline:none;font-size:14px;color:var(--t-ink)}
+#root .bc-search:focus-within{outline:2px solid var(--t-brand);outline-offset:2px}
+#root .bc-search input:focus-visible{outline:none}
+#root .bc-filters select{height:42px;min-width:0;font-size:13px}
+#root .dashboard-hero{
+  background:linear-gradient(120deg,var(--t-ink2),var(--t-brand2) 56%,var(--t-brand));
+  border:1px solid color-mix(in srgb,var(--t-card) 34%,transparent);
+  box-shadow:0 18px 38px color-mix(in srgb,var(--t-brand) 24%,transparent),inset 0 1px #ffffff52;
+}
+#root .dashboard-hero .eyebrow,#root .dashboard-hero p:last-child{color:color-mix(in srgb,var(--t-card) 82%,white)}
+#root .formula-summary-highlights>div,
+#root .formula-summary-section,
+#root .formula-summary-ingredient{
+  border-color:color-mix(in srgb,var(--t-brand) 20%,var(--t-line));
+}
+#root .formula-summary-highlights>div:first-child{background:linear-gradient(135deg,color-mix(in srgb,#dff7ec 75%,var(--t-card)),var(--t-card))}
+#root .formula-summary-highlights>div+div{background:linear-gradient(135deg,color-mix(in srgb,#fff0d0 75%,var(--t-card)),var(--t-card))}
+#root .btn.primary{background:var(--t-btn);color:var(--t-btn-ink);border-color:color-mix(in srgb,var(--t-brand) 55%,white)}
