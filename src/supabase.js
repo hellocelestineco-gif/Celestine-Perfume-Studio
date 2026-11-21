@@ -37,8 +37,15 @@ export async function listAccessProfiles(){
 }
 
 export async function setUserApproval(userId,approved){
- const {error}=await supabase.from('profiles').update({approved,status:approved?'approved':'rejected',updated_at:new Date().toISOString()}).eq('user_id',userId).neq('role','master');
+ return setUserAccessStatus(userId,approved?'approved':'rejected');
+}
+
+export async function setUserAccessStatus(userId,status){
+ const approved=status==='approved';
+ const {data,error}=await supabase.from('profiles').update({approved,status,updated_at:new Date().toISOString()}).eq('user_id',userId).neq('role','master').select('user_id,approved,status').maybeSingle();
  if(error)throw error;
+ if(!data)throw new Error('Approval did not save. Unlock with your PIN and try again.');
+ return data;
 }
 
 export async function updateUserInformation(metadata){const {data,error}=await supabase.auth.updateUser({data:metadata});if(error)throw error;return data.user}
