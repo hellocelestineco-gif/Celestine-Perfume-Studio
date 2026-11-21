@@ -38,6 +38,9 @@ create policy "Master can update approvals" on public.profiles for update to aut
 using (lower(coalesce(auth.jwt() ->> 'email', '')) in ('bonie.office@gmail.com','orong.rms@gmail.com'))
 with check (lower(coalesce(auth.jwt() ->> 'email', '')) in ('bonie.office@gmail.com','orong.rms@gmail.com'));
 
+grant usage on schema public to authenticated;
+grant select on public.profiles to authenticated;
+
 create table if not exists public.app_state (
   user_id uuid primary key references auth.users(id) on delete cascade,
   data jsonb not null default '{}'::jsonb,
@@ -93,3 +96,5 @@ on public.shared_workspace for update
 to authenticated
 using (workspace_id = 'celestine' and exists (select 1 from public.profiles where profiles.user_id = auth.uid() and profiles.approved))
 with check (workspace_id = 'celestine' and exists (select 1 from public.profiles where profiles.user_id = auth.uid() and profiles.approved));
+
+grant select, insert, update on public.shared_workspace to authenticated;
